@@ -6,6 +6,7 @@ const geoCode = require('./utils/geocode');
 const forecast = require('./utils/forecast').forecast;
 
 const app = express();
+const port = process.env.PORT ||3000;
 
 let options = {
     url : 'https://api.darksky.net/forecast/2e497a4788dbf94715f2fa662c0f100e/37.8267,-122.4233?units=us&lang=en',
@@ -187,6 +188,6 @@ app.get('*', (req, res)=>{
     });
 });
 
-app.listen(3000, ()=>{
-    console.log('Server is up on port 3000');
+app.listen(port, ()=>{
+    console.log('Server is up on port ' + port);
 });

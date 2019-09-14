@@ -6,7 +6,7 @@ fetch('http://puzzle.mead.io/puzzle').then((response) => {
     });
 });
 
-fetch('http://localhost:3000/weather?address=India').then((response)=>{
+fetch('/weather?address=India').then((response)=>{
     response.json().then((data)=>{
         console.log(data);
     });
@@ -19,7 +19,7 @@ const message2 = document.querySelector('#message2');
 document.querySelector("form").addEventListener('submit', (e) => {
     e.preventDefault();//prevent refresh the browser
     let value = search_input.value;
-    let url = `http://localhost:3000/weather?address=${ encodeURIComponent(value)}`;
+    let url = `/weather?address=${ encodeURIComponent(value)}`;
     fetch(url).then((response) => {
         response.json().then((data) => {
             console.log(data);
