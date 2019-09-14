@@ -94,6 +94,7 @@ app.get('/weather', (req, res)=>{
             address: req.query.address,
         });
     })*/
+    let x;
     let address = req.query.address;
     geoCode(address, (error, response) => {
         if (error) {
